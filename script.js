@@ -2,7 +2,7 @@ var tl = gsap.timeline();
 var t2 = gsap.timeline();
 function loader() {
   var loaderLogo = document.querySelector("#loader img");
-  setInterval(() => {}, 2500);
+  setInterval(() => {}, 2000);
   tl.from(loaderLogo, {
     opacity: 0,
     duration: 3,
@@ -52,12 +52,12 @@ function loader() {
     tl.to(loaderLogo, {
       borderRadius: "100%",
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       ease: "circ.Out",
     });
     tl.to("#loader p", {
       opacity: "0",
-      duration: 1,
+      duration: 0.5,
       ease: "circ.Out",
     });
     tl.to("#loader", {
@@ -164,7 +164,7 @@ function menu() {
         duration: 1,
         ease: "power4.out",
       });
-      tl2.to("#menu h1,#menu #menu-bar h2,#socials h4, #menu i", {
+      tl2.to("#menu h1,#menu #menu-bar h2,#menu-bar h4, #socials h4, #menu i", {
         opacity: 1,
         y: -20,
         stagger: 0.15,
@@ -418,7 +418,6 @@ function page8BlenderProj() {
       scrub: 1,
     },
   });
-
 }
 
 loco();

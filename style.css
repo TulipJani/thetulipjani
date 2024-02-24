@@ -1,7 +1,22 @@
+@font-face {
+    font-family: 'Pexel Groktesk';
+    src: url(fonts\PexelGrotesk-Regular.woff2);
+}
+
+@font-face {
+    font-family: 'Voyage Bold';
+    src: url(fonts\voyage-bold.woff2);
+}
+
+@font-face {
+    font-family: 'Palast Font';
+    src: url(fonts\PalastDisplay-Regular.woff2);
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'FK Display Trial Alt';
+    font-family: 'Palast Font';
     box-sizing: border-box;
 }
 
@@ -36,12 +51,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 2vw;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 #loader img {
@@ -62,6 +79,13 @@ body {
     text-transform: uppercase;
     color: wheat;
     letter-spacing: 1px;
+}
+
+#loader span {
+    font-family: 'Voyage Bold' !important;
+    font-style: italic;
+    font-size: 1.2vw;
+    margin: .5vw;
 }
 
 #page1 {
@@ -93,6 +117,7 @@ nav {
 nav>h4 {
     font-size: 2vw;
     text-transform: uppercase;
+    font-family: 'Pexel Groktesk';
     font-weight: 300;
 }
 
@@ -103,7 +128,7 @@ nav i {
     font-size: 3vw;
     color: #fff;
     transition: all 200ms ease;
-
+    position: relative;
 }
 
 #nav2 {
@@ -116,6 +141,7 @@ nav i {
 #nav2 h4 {
     font-size: 1.25vw;
     font-weight: 200;
+    font-family: 'Pexel Groktesk';
     text-transform: uppercase;
 }
 
@@ -161,10 +187,11 @@ nav i {
 }
 
 #menu h1 {
-    font-size: 7vw;
+    font-size: 10vw;
     color: #000;
     opacity: 0;
     font-weight: 100;
+    font-family: 'Pexel Groktesk';
     border-bottom: 3px solid #000;
 }
 
@@ -175,24 +202,33 @@ nav i {
     flex-direction: column;
     align-items: end;
     justify-content: end;
-    gap: 2vw;
+    gap: 1vw;
 }
 
 #menu-bar h2 {
     width: 70%;
     text-align: right;
     font-size: 7vw;
-    font-family: 'SchnyderMLight';
     font-weight: 100;
     font-style: italic;
     transition: all 300ms ease-in-out;
     cursor: pointer;
     opacity: 0;
     transform: translateY(100%);
+    position: relative;
 }
 
 #menu-bar h2:hover {
     padding-right: 5vw;
+}
+
+#menu-bar h2:nth-last-child(1)::after {
+    content: "(formality hai, it won' t open anything)";
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    font-size: 1vw;
+
 }
 
 #socials {
@@ -220,6 +256,11 @@ nav i {
     padding-right: 2vw;
 }
 
+#menu a {
+    color: #000;
+    text-decoration: none;
+}
+
 #hero {
     width: 100%;
     height: 60%;
@@ -244,16 +285,17 @@ nav i {
     padding: 0;
 }
 
+
 .hero h1 {
     display: inline-block;
-    font-size: 17vw;
-    text-align: center;
+    font-family: 'Voyage Bold';
+    font-size: 20vw;
+    text-align: left;
     font-weight: 100;
-    line-height: 30vw;
+    line-height: 40vw;
     font-style: italic;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: 'SchnyderMLight';
+    letter-spacing: 0px;
     transition: all ease-in-out 200ms;
     filter: drop-shadow(10px 15px 0px rgba(255, 255, 255, 0));
     transform: translateY(75%);
@@ -277,6 +319,7 @@ nav i {
 }
 
 #page2 h1 {
+    font-family: 'Pexel Groktesk';
     font-size: 6vw;
     font-weight: 900;
     text-align: center;
@@ -284,14 +327,12 @@ nav i {
     text-transform: uppercase;
     margin-bottom: 2vw;
     filter: drop-shadow(-.5vw .5vw 0 #f5f5dc66) drop-shadow(0 0 50px #f5f5dc66);
-    font-family: 'FK Display Trial';
 }
 
 #page2 p {
     color: #fff;
     text-align: center;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
     margin-bottom: 1vw;
     text-transform: uppercase;
@@ -317,12 +358,11 @@ nav i {
 
 #page2 #aboutPara h5 span {
     font-size: 2vw;
-    font-family: 'SchnyderMLight';
     margin: 1vw;
     font-style: italic;
     font-weight: 100;
     color: beige;
-    filter: drop-shadow(-.25vw .25vw 0 #f5f5dc55);
+    -webkit-text-stroke: 1px #000;
     text-transform: capitalize;
 }
 
@@ -338,6 +378,7 @@ nav i {
 }
 
 #page3 h1 {
+    font-family: 'Pexel Groktesk';
     font-size: 6vw;
     font-weight: 900;
     text-align: center;
@@ -352,7 +393,6 @@ nav i {
     text-align: center;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
 }
 
@@ -402,14 +442,12 @@ nav i {
     font-size: 2vw;
     text-transform: uppercase;
     font-weight: 900;
-    font-family: 'SchnyderMLight';
     font-style: italic;
     font-weight: 100;
     z-index: 8;
 }
 
 .elem h2 span {
-    font-family: 'Scto Grotesk A';
     margin: 1vw;
     font-weight: 900;
     font-style: normal;
@@ -446,6 +484,7 @@ nav i {
 }
 
 #page4 h1 {
+    font-family: 'Pexel Groktesk';
     font-size: 6vw;
     font-weight: 900;
     text-align: center;
@@ -459,7 +498,6 @@ nav i {
     text-align: center;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
 }
 
@@ -499,12 +537,13 @@ nav i {
     cursor: pointer;
     position: relative;
     bottom: 0;
-    transition: all 250ms ease
+    transition: all 250ms ease;
+    font-family: 'Pexel Groktesk';
 }
 
 .scroller-in h4:nth-child(2n) {
-    font-family: 'SchnyderMLight';
     font-style: italic;
+    font-family: 'PixelGroktesk';
     color: transparent;
     -webkit-text-stroke: 1px #000;
 }
@@ -525,6 +564,7 @@ nav i {
     font-size: 40vw;
     white-space: nowrap;
     transform: translateX(0%);
+    font-family: 'Voyage Bold';
     color: beige;
 }
 
@@ -534,7 +574,6 @@ nav i {
     text-align: left;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
 }
 
@@ -552,7 +591,6 @@ nav i {
     text-align: left;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
     margin: 2vw;
 }
@@ -606,7 +644,6 @@ nav i {
     text-align: left;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
     margin: 2vw;
 }
@@ -651,7 +688,6 @@ iframe {
     text-align: left;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
 }
 
@@ -709,7 +745,6 @@ iframe {
 }
 
 #page8 p span {
-    font-family: 'Courier New', Courier, monospace;
     font-style: normal;
     font-size: 1.6vw;
     text-transform: none;
@@ -728,7 +763,6 @@ iframe {
     text-align: left;
     text-transform: uppercase;
     font-size: 2vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
     padding: 1vw 4vw;
 }
@@ -739,7 +773,6 @@ iframe {
     text-align: left;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
     padding: 1vw 4vw;
 }
@@ -795,11 +828,11 @@ iframe {
 }
 
 #page10 h6 {
+    font-family: 'Pexel Groktesk';
     color: beige;
     text-align: left;
     text-transform: uppercase;
     font-size: 1.5vw;
-    font-family: 'Scto Grotesk A';
     font-style: normal;
     padding: 1vw 4vw;
 }
@@ -809,7 +842,6 @@ iframe {
     text-align: left;
     text-transform: uppercase;
     font-size: 1vw;
-    font-family: 'Scto Grotesk A';
     font-style: italic;
     padding: 1vw 4vw;
 }
@@ -862,7 +894,8 @@ iframe {
     top: 50%;
     transform: translate(0%, -50%);
     color: beige !important;
-    transition: all 234ms ease
+    transition: all 234ms ease;
+    font-family: 'Voyage Bold' !important;
 }
 
 
@@ -883,6 +916,11 @@ iframe {
 #box:hover i {
     color: #000;
     rotate: 90deg;
+}
+
+#box a {
+    font-family: 'Voyage Bold' !important;
+
 }
 
 #page10 #box:hover #box h3,
@@ -919,8 +957,9 @@ iframe {
 }
 
 #footer-middle h1 {
-    font-size: 13vw !important;
+    font-size: 15vw !important;
     white-space: nowrap;
+    font-family: 'Voyage Bold' !important;
     border-bottom: 1px solid beige;
 }
 
@@ -943,6 +982,10 @@ iframe {
 .contact p {
     text-align: left;
     font-size: 2vw;
+}
+
+.contact a {
+    color: beige;
 }
 
 #footer-btm {
@@ -1126,7 +1169,6 @@ iframe {
         width: 70%;
         text-align: right;
         font-size: 17vw;
-        font-family: 'SchnyderMLight';
         font-weight: 100;
         font-style: italic;
         transition: all 300ms ease-in-out;
@@ -1200,7 +1242,6 @@ iframe {
         font-style: italic;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-family: 'SchnyderMLight';
         transition: all ease-in-out 200ms;
         filter: drop-shadow(10px 15px 0px rgba(255, 255, 255, 0));
         transform: translateY(75%);
@@ -1230,14 +1271,12 @@ iframe {
         text-transform: uppercase;
         margin-bottom: 2vw;
         filter: drop-shadow(-.5vw .5vw 0 #f5f5dc66) drop-shadow(0 0 50px #f5f5dc66);
-        font-family: 'FK Display Trial';
     }
 
     #page2 p {
         color: #fff;
         text-align: center;
         font-size: 3.5vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
         margin-bottom: 1vw;
         text-transform: uppercase;
@@ -1263,7 +1302,6 @@ iframe {
 
     #page2 #aboutPara h5 span {
         font-size: 5.5vw;
-        font-family: 'SchnyderMLight';
         margin: 1vw;
         font-style: italic;
         font-weight: 100;
@@ -1300,7 +1338,6 @@ iframe {
         text-align: center;
         text-transform: uppercase;
         font-size: 3.5vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
     }
 
@@ -1352,14 +1389,12 @@ iframe {
         font-size: 5vw;
         text-transform: uppercase;
         font-weight: 900;
-        font-family: 'SchnyderMLight';
         font-style: italic;
         font-weight: 100;
         z-index: 8;
     }
 
     .elem h2 span {
-        font-family: 'Scto Grotesk A';
         margin: 1vw;
         font-weight: 900;
         font-style: normal;
@@ -1412,7 +1447,6 @@ iframe {
         text-align: center;
         text-transform: uppercase;
         font-size: 3.5vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
     }
 
@@ -1456,7 +1490,6 @@ iframe {
     }
 
     .scroller-in h4:nth-child(2n) {
-        font-family: 'SchnyderMLight';
         font-style: italic;
         color: transparent;
         -webkit-text-stroke: 1px #000;
@@ -1487,7 +1520,6 @@ iframe {
         text-align: left;
         text-transform: uppercase;
         font-size: 3.5vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
     }
 
@@ -1509,7 +1541,6 @@ iframe {
         text-align: left;
         text-transform: uppercase;
         font-size: 4vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
     }
 
@@ -1568,7 +1599,6 @@ iframe {
     }
 
     #page8 p span {
-        font-family: 'Courier New', Courier, monospace;
         font-style: normal;
         font-size: 3vw;
         text-transform: none;
@@ -1586,7 +1616,6 @@ iframe {
         text-align: left;
         text-transform: uppercase;
         font-size: 6vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
         padding: 1vw 4vw;
     }
@@ -1597,7 +1626,6 @@ iframe {
         text-align: left;
         text-transform: uppercase;
         font-size: 3vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
         padding: 1vw 4vw;
     }
@@ -1656,7 +1684,6 @@ iframe {
         text-align: left;
         text-transform: uppercase;
         font-size: 5vw;
-        font-family: 'Scto Grotesk A';
         font-style: normal;
         padding: 1vw 4vw;
     }
@@ -1666,7 +1693,6 @@ iframe {
         text-align: left;
         text-transform: uppercase;
         font-size: 3vw;
-        font-family: 'Scto Grotesk A';
         font-style: italic;
         padding: 1vw 4vw;
     }
