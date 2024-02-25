@@ -747,7 +747,7 @@ nav i {
         height: 100vh;
         padding: 10vw 5vw;
         display: flex;
-        align-items: end;
+        align-items: start;
     }
 
     #mobile p {
