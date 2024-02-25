@@ -190,6 +190,7 @@ function menu() {
     }
   });
 }
+
 function scrollerAnimation() {
   gsap.to("#scroller", {
     transform: "translateY(0) translateX(-50%) rotate(10deg)",
@@ -226,6 +227,24 @@ function crsr() {
       ease: "circ.out",
     });
   });
+  document.addEventListener("click", function () {
+    gsap.to("#crsr", {
+      scale: 1.5,
+      borderRadius: 0,
+      rotate: 45,
+      duration: 0.5,
+      ease: "circ.inOut",
+    });
+    setInterval(() => {
+      gsap.to("#crsr", {
+        borderRadius: "50%",
+        rotate: 90,
+        scale: 1,
+        duration: 0.5,
+        ease: "circ.inOut",
+      });
+    }, 500);
+  });
 }
 
 function pg5HorizontalText() {
@@ -242,184 +261,6 @@ function pg5HorizontalText() {
   });
 }
 
-function page8BlenderProj() {
-  gsap.to("#page8 #card1", {
-    scale: 0.9,
-    y: -50,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card1",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card2", {
-    y: -50,
-    scale: 0.9,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card2",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card3", {
-    scale: 0.9,
-    y: -50,
-    // y: 300,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card3",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card4", {
-    scale: 0.9,
-    y: -50,
-    // y: 300,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card4",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card5", {
-    y: -50,
-    scale: 0.9,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card5",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-  gsap.to("#page8 #card6", {
-    scale: 0.9,
-    y: -50,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card6",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card7", {
-    y: -50,
-    scale: 0.9,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card7",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card8", {
-    scale: 0.9,
-    y: -50,
-    // y: 300,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card8",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card9", {
-    scale: 0.9,
-    y: -50,
-    // y: 300,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card9",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card10", {
-    y: -50,
-    scale: 0.9,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card10",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-
-  gsap.to("#page8 #card11", {
-    y: -50,
-    scale: 0.9,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card11",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-  gsap.to("#page8 #card12", {
-    scale: 0.9,
-    y: -50,
-    // filter: "blur(10px)",
-    // opacity: 0,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#page8 #card12",
-      scroller: "#main",
-      start: "top 15%",
-      end: "top top",
-      scrub: 1,
-    },
-  });
-}
-
 loco();
 loader();
 heroAnimation();
@@ -427,4 +268,3 @@ menu();
 scrollerAnimation();
 crsr();
 pg5HorizontalText();
-page8BlenderProj();
