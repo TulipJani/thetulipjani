@@ -85,7 +85,7 @@ body {
     font-size: 1.5vw;
     position: relative;
     font-family: 'Pexel Groktesk';
-        top: 10vw;
+    top: 10vw;
     font-weight: 100;
     text-transform: uppercase;
     color: wheat;
@@ -757,6 +757,14 @@ nav i {
     }
 
     #main {
+        display: none;
+    }
+
+    #crsr {
+        display: none;
+    }
+
+    #menu {
         display: none;
     }
 
