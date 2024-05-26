@@ -45,8 +45,8 @@ html {
 }
 
 #crsr {
-  width: 2vw;
-  height: 2vw;
+  width: 0.5vw;
+  height: 0.5vw;
   border-radius: 50%;
   border: 1px solid #365cc0;
   background: #365cc0;
@@ -74,6 +74,7 @@ html {
   left: 0;
   z-index: 999;
   text-align: center;
+  border: 5px solid #365cc0;
   /* display: none; */
 }
 
@@ -160,6 +161,11 @@ nav i {
   width: 100%;
   height: 100vh;
   background-color: #010101;
+  border-right: 5px solid #365cc0;
+  border-left: 5px solid #365cc0;
+  border-bottom: 5px solid #365cc0;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   position: fixed;
   top: -100%;
   left: 0;
@@ -662,6 +668,7 @@ nav i {
   height: fit-content;
   background-color: #010101;
   padding: 2vw;
+  font-family: "Voyage Bold" !important;
   color: white;
 }
 
@@ -688,7 +695,7 @@ nav i {
   font-size: 15vw !important;
   white-space: nowrap;
   font-family: "Voyage Bold" !important;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #365cc0;
 }
 
 .contact {
@@ -1484,7 +1491,7 @@ nav i {
 
   #page2 {
     width: 100%;
-    height: 125vh;
+    height: 100vh;
     background-color: #01010150;
     color: #efefef;
     padding: 10vw;
@@ -1562,13 +1569,15 @@ nav i {
 
   .elem {
     width: 100%;
-    height: 40vh;
+    height: 25vh;
     background: #365cc0;
     padding: 1vw 4vw;
+    margin: 5vw 0;
     display: flex;
-    align-items: end;
+    align-items: start;
     justify-content: center;
     flex-direction: column;
+    gap: 3vw;
     transition: all 157ms ease-in-out;
     cursor: pointer;
     position: relative;
@@ -1627,7 +1636,7 @@ nav i {
 
   .elem i {
     position: absolute;
-    top: 10%;
+    bottom: 10%;
     right: 5%;
     font-weight: 100;
     font-size: 4vw;
@@ -1673,9 +1682,9 @@ nav i {
 
   #scroller {
     width: fit-content;
-    height: 15vh;
+    height: 10vh;
     background: #365cc0;
-    margin: 5vw 0;
+    margin: 10vw 0;
     display: flex;
     padding-top: 5vh;
     transform-origin: center;
@@ -1684,7 +1693,7 @@ nav i {
 
   #scroller2 {
     width: fit-content;
-    height: 15vh;
+    height: 10vh;
     background: #365cc0;
     display: flex;
     transform-origin: center;
@@ -1732,7 +1741,8 @@ nav i {
   }
 
   #page5 h1 {
-    font-size: 44vw;
+    margin-top: 50vw;
+    font-size: 44.5vw;
     line-height: 44vw;
     white-space: nowrap;
     transform: translateX(0%);

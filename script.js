@@ -7,8 +7,8 @@ function loader() {
     "Hello",
     "Hola",
     "Bonjour",
-    "Ciao",
     "Namaste",
+    "Ciao",
     "Launching...",
     "click anywhere to continue",
   ];
@@ -45,7 +45,13 @@ function loader() {
   animateGreeting(0);
   document.addEventListener("click", function () {
     tl.to("#loader", {
-      y: -1000,
+      border: "300px solid #365cc0",
+      duration: 1,
+      ease: "circ.inOut",
+    });
+    tl.to("#loader", {
+      height: 0,
+      top: "-100%",
       duration: 1,
       ease: "circ.inOut",
     });
@@ -62,48 +68,63 @@ function loader() {
 }
 
 function loco() {
-  gsap.registerPlugin(ScrollTrigger);
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smoothMobile: true,
-    smartphone: {
-      smooth: true,
-    },
-    smooth: true,
-    getDirection: true,
-    mobile: {
-      breakpoint: 0,
-      smooth: false,
-      getDirection: true,
-    },
-    tablet: {
-      breakpoint: 0,
-      smooth: false,
-      getDirection: true,
-    },
-  });
-  locoScroll.on("scroll", ScrollTrigger.update);
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector("#main").style.transform
-      ? "transform"
-      : "fixed",
-  });
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+gsap.registerPlugin(ScrollTrigger);
 
-  ScrollTrigger.refresh();
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#main"),
+  smoothMobile: true,
+  smartphone: {
+    smooth: true,
+    multiplier: 0.8, // Adjusted from 0.7 to 0.8 for potentially smoother experience
+  },
+  smooth: true,
+  getDirection: true,
+  mobile: {
+    breakpoint: 0,
+    smooth: true, // Ensure smooth is enabled for mobile
+    getDirection: true,
+  },
+  tablet: {
+    breakpoint: 0,
+    smooth: true, // Ensure smooth is enabled for tablets
+    getDirection: true,
+  },
+});
+
+// Update settings for smoother scrolling
+locoScroll.update({
+  smooth: 5, // Increased smooth value for potentially smoother experience
+});
+
+locoScroll.update({
+  multiplier: 0.9, // Adjusted multiplier for potentially smoother experience
+});
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("#main", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  },
+  pinType: document.querySelector("#main").style.transform
+    ? "transform"
+    : "fixed",
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
 }
 
 function heroAnimation() {}
@@ -185,41 +206,24 @@ function crsr() {
       ease: "elastic.out(1,1)",
     });
   });
-  document.addEventListener("click", function () {
-    gsap.to("#crsr", {
-      scale: 1.5,
-      borderRadius: 0,
-      rotate: 45,
-      duration: 0.5,
-      ease: "circ.inOut",
-    });
-    setInterval(() => {
-      gsap.to("#crsr", {
-        borderRadius: "50%",
-        rotate: 90,
-        scale: 1,
-        duration: 0.5,
-        ease: "circ.inOut",
-      });
-    }, 500);
-  });
 }
 
 function pg5HorizontalText() {
   gsap.to("#page5 h1", {
-    transform: "translateX(-625%)",
+    transform: "translateX(-150%)",
     scrollTrigger: {
       trigger: "#page5",
       scroller: "#main",
-      start: "top 10%",
-      end: "top -250%",
-      pin: true,
+      start: "top 5%",
+      end: "top -15%",
       scrub: 1,
+      pin: true,
+      // markers: true,
     },
   });
 }
 
-loco();  
+loco();
 loader();
 heroAnimation();
 menu();
