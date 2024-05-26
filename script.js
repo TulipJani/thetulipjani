@@ -68,63 +68,60 @@ function loader() {
 }
 
 function loco() {
-gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smoothMobile: true,
-  smartphone: {
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smoothMobile: true,
+    smartphone: {
+      smooth: true,
+      multiplier: 0.8, // Adjusted from 0.7 to 0.8 for potentially smoother experience
+    },
     smooth: true,
-    multiplier: 0.8, // Adjusted from 0.7 to 0.8 for potentially smoother experience
-  },
-  smooth: true,
-  getDirection: true,
-  mobile: {
-    breakpoint: 0,
-    smooth: true, // Ensure smooth is enabled for mobile
     getDirection: true,
-  },
-  tablet: {
-    breakpoint: 0,
-    smooth: true, // Ensure smooth is enabled for tablets
-    getDirection: true,
-  },
-});
+    mobile: {
+      smooth: true, // Ensure smooth is enabled for mobile
+      getDirection: true,
+    },
+    tablet: {
+      smooth: true, // Ensure smooth is enabled for tablets
+      getDirection: true,
+    },
+  });
 
-// Update settings for smoother scrolling
-locoScroll.update({
-  smooth: 5, // Increased smooth value for potentially smoother experience
-});
+  // Update settings for smoother scrolling
+  locoScroll.update({
+    smooth: 5, // Increased smooth value for potentially smoother experience
+  });
 
-locoScroll.update({
-  multiplier: 0.9, // Adjusted multiplier for potentially smoother experience
-});
+  locoScroll.update({
+    multiplier: 0.9, // Adjusted multiplier for potentially smoother experience
+  });
 
-locoScroll.on("scroll", ScrollTrigger.update);
+  locoScroll.on("scroll", ScrollTrigger.update);
 
-ScrollTrigger.scrollerProxy("#main", {
-  scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-  pinType: document.querySelector("#main").style.transform
-    ? "transform"
-    : "fixed",
-});
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: document.querySelector("#main").style.transform
+      ? "transform"
+      : "fixed",
+  });
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
-ScrollTrigger.refresh();
-
+  ScrollTrigger.refresh();
 }
 
 function heroAnimation() {}

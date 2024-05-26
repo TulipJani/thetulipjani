@@ -167,7 +167,7 @@ nav i {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   position: fixed;
-  top: -100%;
+  top: -120%;
   left: 0;
   z-index: 9;
   padding: 2vw 4vw;
