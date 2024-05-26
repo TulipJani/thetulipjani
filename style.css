@@ -813,7 +813,7 @@ nav i {
     height: 100vh;
     background: #000;
     position: fixed;
-    top: -100%;
+    top: -120%;
     left: 0;
     z-index: 9;
     padding: 8vw 3vw;
@@ -1353,7 +1353,7 @@ nav i {
     height: 100vh;
     background: #000;
     position: fixed;
-    top: -100%;
+    top: -120%;
     left: 0;
     z-index: 9;
     padding: 5vw;
