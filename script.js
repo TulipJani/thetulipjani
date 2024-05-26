@@ -136,7 +136,7 @@ function menu() {
     flag = 1;
     if (flag == 1) {
       tl2.to(menu, {
-        y: "100%",
+        y: "120%",
         duration: 1,
         ease: "power4.out",
       });
